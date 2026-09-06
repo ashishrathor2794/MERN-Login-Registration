@@ -1,4 +1,6 @@
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://mern-login-registration-backend.onrender.com/api";
 
 async function request(path, options = {}) {
   const response = await fetch(`${API_URL}${path}`, {
@@ -47,5 +49,6 @@ export const resetPassword = (payload) =>
     method: "POST",
     body: JSON.stringify(payload)
   });
-  
-export const getCurrentUser = () => request("/auth/me");
+
+export const getCurrentUser = () =>
+  request("/auth/me");
